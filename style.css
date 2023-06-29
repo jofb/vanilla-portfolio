@@ -1,0 +1,97 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+body {
+    background-color: #f2f2f2;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.navbar > * {
+    padding: 0.5rem;
+}
+/* <link rel="preconnect" href="https://rsms.me/">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"> */
+/* --text: #0f0f10;
+--background: #f7f7f8;
+--primary-button: #5849ab;
+--secondary-button: #d8d4ed;
+--accent: #4f429a; */
+
+.navbar h1 {
+    font-weight: 100;
+    font-size: 3.5rem;
+}
+.navbar-list {
+    position: sticky;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+.navbar-list > li {
+    padding: 0.5rem 0;
+}
+
+.navbar-list > button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: ghostwhite;
+    border-radius: 0.3rem;
+    font-size: 2rem;
+    color: rgb(70, 70, 70);
+}
+.navbar-selected {
+    color: green;
+    font-size: 5rem;
+    background-color: red;
+}
+
+.navbar-list > button:hover {
+    cursor: pointer;
+    background-color: deeppink;
+    color: ghostwhite;
+    transition: ease-in-out 0.15s;
+}
+
+.home-content,
+.projects-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.home-content > p {
+    font-size: 1.1rem;
+    max-width: 50%;
+    /* color: rgb(88, 88, 88);
+     */
+    color: #121212;
+}
+
+/* Projects page */
+.projects-list {
+    max-width: 50%;
+}
+.project-tile {
+    display: flex;
+    flex-direction: row;
+    border: 2px dotted rgb(88, 88, 88);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    margin: 1rem 0;
+}
+.project-tile:hover {
+    border: 2px solid rgb(255, 20, 147);
+    /* background-color: rgb(121, 228, 224); */
+    /* color: ghostwhite; */
+    transition: ease-in-out 0.1s;
+}
+.project-tile > img {
+    max-height: 8rem;
+}

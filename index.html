@@ -2,34 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="assets/website-deco-colored.png"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Portfolio</title>
         <link rel="stylesheet" href="style.css" />
-        <link rel="preconnect" href="https://rsms.me/">
-        <link rel="stylesheet" href="https://rsms.me/inter/inter.css"> 
+        <link rel="preconnect" href="https://rsms.me/" />
+        <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
     </head>
     <body>
-        <nav class="navbar">
+        <nav id="navbar" class="navbar">
             <h1>Jordan Wylde-Browne</h1>
             <ul class="navbar-list">
-                <button class="navbar-selected">Home</button>
-                <button onclick="window.location.href='./projects.html';">
-                    Projects
+                <button class="navbar-selected">
+                    <a href="/" data-link>Home</a>
                 </button>
+                <button><a href="/projects" data-link>Projects</a></button>
             </ul>
         </nav>
-
-        <section class="home-content">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+        <section class="content">
+            <main id="app"></main>
         </section>
 
         <script type="module" src="/main.js"></script>

@@ -3,13 +3,13 @@
     --background: #f7f7f8;
     --primary-button: #5849ab;
     --secondary-button: #d8d4ed;
-    --accent: #4f429a; 
+    --accent: #4f429a;
 }
 
 * {
     padding: 0;
     margin: 0;
-    font-family: 'inter';
+    font-family: "inter";
 }
 body {
     /* background-color: ghostwhite; */
@@ -27,7 +27,7 @@ body {
 }
 
 .navbar h1 {
-    font-weight: 200;
+    font-weight: 800;
     color: var(--primary-button);
     font-size: 3.5rem;
 }
@@ -55,11 +55,15 @@ body {
 }
 .navbar-list > button:hover {
     cursor: pointer;
-    transform: translateY(-6px);
-    text-shadow: 0 6px 25px var(--primary-button);
+    transform: translate3d(-2px, -5px, 0);
+    text-shadow: 0 5px 40px var(--accent);
     /* box-shadow: 5px 5px deeppink; */
     /* background-color: var(--secondary-button); */
     transition: ease-in-out 0.15s;
+}
+.navbar-list > button > a {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* .navbar-selected {
@@ -68,14 +72,26 @@ body {
     background-color: red;
 } */
 
-
-.home-content,
-.projects-content {
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* max-width: 60%; */
 }
-.home-content > p {
+
+.big-text {
+    font-size: 2.5rem;
+    color: var(--text);
+    font-weight: 300;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 50%;
+}
+.content > p {
     font-size: 1.1rem;
     max-width: 50%;
     /* color: rgb(88, 88, 88);
@@ -84,23 +100,38 @@ body {
 }
 
 /* Projects page */
-.projects-list {
-    max-width: 50%;
-}
+
 .project-tile {
     display: flex;
     flex-direction: row;
-    border: 2px dotted rgb(88, 88, 88);
-    border-radius: 0.5rem;
-    padding: 0.8rem;
-    margin: 1rem 0;
+    list-style: none;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: ease-in-out 0.1s;
+    /* border: 1px solid var(--secondary-button); */
+}
+.project-tile-desc > h1 {
+    margin: 0.5rem 0;
+    font-weight: 800;
+    font-size: 1.5rem;
+    /* color: var(--accent); */
+    text-shadow: 3px 3px 5px var(--secondary-button);
 }
 .project-tile:hover {
-    border: 2px solid rgb(255, 20, 147);
-    /* background-color: rgb(121, 228, 224); */
-    /* color: ghostwhite; */
-    transition: ease-in-out 0.1s;
+    transition: ease-in-out 0.15s;
+    box-shadow: 3px 3px 10px var(--primary-button);
+    transform: translate3d(-6px, -6px, 0);
+    cursor: pointer;
 }
+
 .project-tile > img {
-    max-height: 8rem;
+    max-height: 9rem;
+    padding: 0 0.2rem;
+}
+
+.slide-in-animation {
+    transform: translateX(-100%);
+    /* opacity: 0; */
+    transition: transform 0.3s ease-in;
 }

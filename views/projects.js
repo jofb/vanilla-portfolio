@@ -1,5 +1,5 @@
 // load the json
-import data from "../projects-list.json";
+import data from "../assets/projects-list.json";
 
 let html = `<ul class="projects-list">`;
 data.forEach((val) => {

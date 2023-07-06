@@ -1,17 +1,20 @@
 [
     {
-        "title": "Portfolio Site",
+        "title": "portfolio website",
         "img": "alpaca-deco.png",
+        "short_text": "this website, with vanilla html/css/js",
         "full_text": "That's this site! This is a relatively simple website created with vanilla HTML, CSS, and JS. It is bundled using Vite and deployed on GH-Pages. This portfolio site is intended to be a simple place to showcase some of my work. This website isn't done yet!"
     },
     {
-        "title": "Game Dev",
+        "title": "game dev",
         "img": "game-deco.png",
+        "short_text": "hobby game development using various engines",
         "full_text": "Throughout my studies and also through personal projects I have spent a bit of time doing game dev. Most of these are done using Unity, but I have also used other engines for other languages, such as Python and Lua. These are tons of fun to make, most can be found here https://jofbob.itch.io/"
     },
     {
-        "title": "Spoken Language Identification",
+        "title": "language identification",
         "img": "horse-deco.png",
+        "short_text": "mobile spoken LID using machine learning",
         "full_text": "As part of my final project of my undergrad I led a team of 6 to complete a project working with the State Emergency Service here in Tasmania. The project aimed to create a mobile application to identify spoken language using machine learning. This was implemented using Flutter, and Python for the ML using TensorFlow. I gained a lot of experience working with audio processing, Tensorflow, Flutter development, and collaboration on this project, it was a lot of fun!"
     }
 ]

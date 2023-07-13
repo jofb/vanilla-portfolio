@@ -18,8 +18,6 @@ projectsList.forEach((val, index) => {
 // Page Router for single page application
 function router() {
     let view = routes[location.pathname];
-    // console.log(location.pathname);
-    // const fragment = location.hash.slice(1);
 
     if (view) {
         document.title = view.title;
@@ -28,6 +26,7 @@ function router() {
         history.replaceState("", "", "/");
         router();
     }
+    assignButtonListeners();
 }
 
 window.addEventListener("click", (e) => {
@@ -39,18 +38,20 @@ window.addEventListener("click", (e) => {
     }
 });
 
-window.addEventListener("popstate", router);
-window.addEventListener("DOMContentLoaded", () => {
-    router();
-
+function assignButtonListeners() {
     let buttons = document.querySelectorAll(".project-tile-wrapper");
-    console.log(buttons);
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", (e) => {
+            console.log("ive been pressesd!");
             let index = e.target.closest("li[data-index]").dataset.index;
             popup(index);
         });
     }
+}
+
+window.addEventListener("popstate", router);
+window.addEventListener("DOMContentLoaded", () => {
+    router();
 });
 
 function popup(i) {

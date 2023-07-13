@@ -24,6 +24,13 @@ export function getProject(index) {
     // now formulate some html and return it
     let popup = `<div class="popup-content-title"><h1>${project.title}</h1><i class="fa-solid fa-xmark" onclick="off()"></i></div><p>${project.full_text}</p>`;
     popup += `<div class="popup-content-extra">`;
+    if (exp) {
+        popup += `<div class="popup-content-experience"><i class="fa-solid fa-list-check"></i>`;
+        exp.forEach((val) => {
+            popup += `<p>${val}</p>`;
+        });
+        popup += `</div>`;
+    }
     if (links) {
         popup += `<div class="popup-content-links">`;
         links.forEach((val) => {
@@ -33,12 +40,7 @@ export function getProject(index) {
         });
         popup += `</div>`;
     }
-    if (exp) {
-        popup += `<div class="popup-content-experience"><i class="fa-solid fa-list-check"></i>`;
-        exp.forEach((val) => {
-            popup += `<p>${val}</p>`;
-        });
-    }
+
     popup += `</div>`;
 
     // add links based on links

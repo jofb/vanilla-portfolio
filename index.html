@@ -28,16 +28,21 @@
             </ul>
         </nav>
         <section class="content">
+            <section id="popup">
+                <div id="popup-content">
+                    <h1>hello</h1>
+                    <p>hjere is some really cool content</p>
+                </div>
+            </section>
             <main id="app"></main>
         </section>
-
         <footer class="footer">
             <a
                 class="footer-button"
                 href="https://github.com/jofb"
                 target="_blank"
                 rel="noopener noreferrer"
-                title="Github"
+                title="My github"
             >
                 <i class="fa-brands fa-github"></i>
             </a>
@@ -51,6 +56,18 @@
                 <i class="fa-solid fa-envelope"></i>
             </a>
         </footer>
+
+        <script>
+            let overlay = document.getElementById("popup");
+            function off() {
+                overlay.style.transform = "translateY(100px)";
+                //
+                overlay.style.opacity = "0";
+                window.setTimeout(() => {
+                    overlay.style.display = "none";
+                }, 200);
+            }
+        </script>
 
         <script type="module" src="./main.js"></script>
     </body>

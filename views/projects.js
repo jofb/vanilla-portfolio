@@ -1,9 +1,14 @@
 // load the json
 import data from "../assets/projects-list.json";
 
+const icons = {
+    github: '<i class="fa-brands fa-github"></i>',
+    itch: '<i class="fa-brands fa-itch-io"></i>',
+};
+
 let html = `<ul class="projects-list">`;
-data.forEach((val) => {
-    html += `<li class="project-tile-wrapper"><div class="project-tile">`;
+data.forEach((val, index) => {
+    html += `<li class="project-tile-wrapper" data-index=${index}><div class="project-tile">`;
     // html += `<img src="../assets/${val.img}"></img><div class="project-tile-desc">`;
     // html += `<div class="project-tile-desc">`;
     html += `<h1>${val.title}</h1>`;
@@ -11,11 +16,33 @@ data.forEach((val) => {
     html += "</div></li>";
 });
 html += "</ul>";
-// <li class="project-tile-wrapper">
-//     <div class="project-tile">
-//         <h1>portfolio website</h1>
-//         <p>this website, with vanillia html/css/js</p>
-//     </div>
-// </li>;
+
+export function getProject(index) {
+    const project = data[index];
+    const links = project.links;
+    const exp = project.experience;
+    // now formulate some html and return it
+    let popup = `<div class="popup-content-title"><h1>${project.title}</h1><i class="fa-solid fa-xmark" onclick="off()"></i></div><p>${project.full_text}</p>`;
+    popup += `<div class="popup-content-extra">`;
+    if (links) {
+        popup += `<div class="popup-content-links">`;
+        links.forEach((val) => {
+            popup += `<a class="footer-button" href="${
+                val.link
+            }" target="_blank">${icons[val.type]}</a>`;
+        });
+        popup += `</div>`;
+    }
+    if (exp) {
+        popup += `<div class="popup-content-experience"><i class="fa-solid fa-list-check"></i>`;
+        exp.forEach((val) => {
+            popup += `<p>${val}</p>`;
+        });
+    }
+    popup += `</div>`;
+
+    // add links based on links
+    return popup;
+}
 
 export default () => html;

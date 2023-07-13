@@ -2,7 +2,7 @@
     {
         "title": "portfolio website",
         "short_text": "this website, with vanilla html/css/js",
-        "full_text": "That's this site! This is a relatively simple website created with vanilla HTML, CSS, and JS. It is bundled using Vite and deployed on GH-Pages. It is intended to be a simple place to showcase some of my work. This website isn't done yet! But you can see my progress through the github link below.",
+        "full_text": "That's this site! </br>This is a relatively simple website created with vanilla HTML, CSS, and JS. It is bundled using Vite and deployed on GH-Pages. It is intended to be a simple place to showcase some of my work. This website isn't done yet! But you can see my progress through the github link below.",
         "links": [
             {
                 "type": "github",
@@ -26,7 +26,7 @@
     {
         "title": "language identification",
         "short_text": "mobile spoken LID using machine learning",
-        "full_text": "As part of my final project of my undergrad I led a team of 6 to complete a project working with the State Emergency Service here in Tasmania. The aim of the project was to create a mobile application to identify spoken language using machine learning, to aid non English-speaking crash site victims. </br></br>This was implemented using Flutter, and Python for the ML using TensorFlow. I gained a lot of experience working with audio processing, Tensorflow, Flutter development, and collaboration on this project, it was a lot of fun!",
+        "full_text": "As part of my final project of my undergrad I led a team of 6 to complete a project working with the State Emergency Service here in Tasmania. The aim of the project was to create a mobile application to identify spoken language using machine learning, to aid non English-speaking crash site victims. </br></br>This was implemented using Flutter, and Python for the ML using TensorFlow. I gained a lot of experience working with tensorflow, Flutter development, and working in a team on this project, it was a lot of fun!",
         "experience": ["Flutter, Python, Tensorflow, Audio Classification"]
     }
 ]

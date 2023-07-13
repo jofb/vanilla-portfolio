@@ -2,8 +2,8 @@
 import data from "../assets/projects-list.json";
 
 const icons = {
-    github: '<i class="fa-brands fa-github"></i>',
-    itch: '<i class="fa-brands fa-itch-io"></i>',
+    github: '<i class="icon fa-brands fa-github"></i>',
+    itch: '<i class="icon fa-brands fa-itch-io"></i>',
 };
 
 let html = `<ul class="projects-list">`;
@@ -22,7 +22,7 @@ export function getProject(index) {
     const links = project.links;
     const exp = project.experience;
     // now formulate some html and return it
-    let popup = `<div class="popup-content-title"><h1>${project.title}</h1><i class="fa-solid fa-xmark" onclick="off()"></i></div><p>${project.full_text}</p>`;
+    let popup = `<div class="popup-content-title"><h1>${project.title}</h1><i id="popup-close" class="fa-solid fa-xmark"></i></div><p>${project.full_text}</p>`;
     popup += `<div class="popup-content-extra">`;
     if (exp) {
         popup += `<div class="popup-content-experience"><i class="fa-solid fa-list-check"></i>`;

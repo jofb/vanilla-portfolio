@@ -7,7 +7,6 @@ export default defineConfig({
             input: {
                 index: "index.html",
                 404: "404.html",
-                // Add more entries for each HTML file you want in your app
             },
         },
     },

@@ -1,10 +1,16 @@
 :root {
-    --text: #0f0f10;
-    --subtext: rgb(80, 80, 80);
+    --subtext: rgb(100, 100, 100);
+    /* --text: #0f0f10;
     --background: #e9ebf1;
     --primary-button: #5849ab;
     --secondary-button: #d8d4ed;
-    --accent: #4f429a;
+    --accent: #4f429a; */
+    /* --text: #01130e; */
+    --text: #f2fdfd;
+    --background: #0e1111;
+    --primary: #1c70c4;
+    --secondary: crimson;
+    --accent: #2020df;
 
     --big-text: 3.5rem;
 }
@@ -16,7 +22,7 @@
 }
 body {
     /* background-color: ghostwhite; */
-    background-color: var(--background);
+    background-color: rgb(14, 17, 17);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -34,8 +40,8 @@ body {
 
 .navbar h1 {
     font-weight: 800;
-    color: var(--primary-button);
-    font-size: var(--big-text);
+    color: var(--text);
+    font-size: 3rem;
     cursor: default;
     text-align: center;
 }
@@ -57,6 +63,7 @@ body {
     /* background-color: var(--secondary-button); */
     border-radius: 0.75rem;
     font-size: 2rem;
+    font-weight: 300;
     color: var(--text);
     /* color: rgb(70, 70, 70); */
     transition: ease-in-out 0.15s;
@@ -72,13 +79,16 @@ body {
     /* background-color: var(--secondary-button); */
     /* transition: ease-in-out 0.15s; */
     -webkit-transition: ease-in-out 0.15s;
+    /* text-shadow: 1px 1px 3px var(--text); */
+    color: var(--primary);
+    /* text-shadow: 1px 1px var(--text); */
 
-    background-color: crimson;
+    /* background-color: crimson;
     transform: translate3d(-2px, -2px, 0);
     -webkit-transform: translate3d(-2px, -2px, 0);
     color: var(--background);
     border-radius: 0.75rem;
-    box-shadow: 2px 2px 3px var(--accent);
+    box-shadow: 2px 2px 3px var(--accent); */
 }
 .navbar-list > button > a {
     text-decoration: none;
@@ -111,10 +121,10 @@ body {
     color: var(--subtext);
 }
 .footer-button:hover {
-    transition: ease-in-out 0.15s;
-    -webkit-transition: ease-in-out 0.15s;
-    text-shadow: 2px 2px 4px var(--accent);
-    color: crimson;
+    transition: ease-in-out 0.1s;
+    -webkit-transition: ease-in-out 0.1s;
+    text-shadow: 1px 1px 3px var(--text);
+    color: var(--primary);
 }
 
 .content {
@@ -152,9 +162,18 @@ body {
 
 /* Projects page */
 .projects-list {
-    list-style: square;
+    /* list-style: square; */
+    list-style: none;
     margin-top: 2rem;
     margin-top: 0;
+}
+.projects > li::before {
+    content: "\2022";
+    color: red;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 .project-tile-wrapper {
     margin: 0;
@@ -168,10 +187,12 @@ body {
 .project-tile > h1 {
     font-size: 2rem;
     transition: ease-in 0.05s;
+    /* color: var(--text); */
+    color: var(--primary);
     -webkit-transition: ease-in 0.05s;
 }
 .project-tile > p {
-    color: var(--subtext);
+    color: var(--text);
 }
 
 .project-tile-wrapper:hover {
@@ -181,8 +202,8 @@ body {
 }
 
 .project-tile-wrapper:hover div > h1 {
-    color: var(--primary-button);
-    text-shadow: 3px 3px 2px var(--secondary-button);
+    color: var(--secondary);
+    text-shadow: 3px 3px 2px var(--secondary);
     transition: ease-in 0.05s;
     -webkit-transition: ease-in 0.05s;
 }
@@ -217,7 +238,7 @@ body {
     box-shadow: 5px 5px 10px var(--subtext);
     /* margin: auto; */
     /* background-color: rgb(243, 163, 110); */
-    background-color: var(--secondary-button);
+    background-color: var(--accent);
     padding: 2rem 3rem;
     border-radius: 2rem;
     overflow-y: auto;
@@ -238,13 +259,13 @@ body {
 .popup-content-title > i {
     font-size: var(--big-text);
     padding-left: 0.2rem;
-    color: var(--accent);
+    color: var(--background);
     opacity: 0.75;
     cursor: pointer;
 }
 #popup-content > p {
     font-size: 1.2rem;
-    color: var(--subtext);
+    color: var(--background);
     /* text-shadow: 2px 2px var(--background); */
     margin-bottom: 1.5rem;
 }
@@ -255,7 +276,7 @@ body {
     justify-content: space-between;
 }
 .popup-content-links > a {
-    color: var(--subtext);
+    color: var(--background);
     font-size: 3rem;
     margin: 0;
     padding: 0 0.3rem;
@@ -271,14 +292,14 @@ body {
     align-items: center;
 }
 .popup-content-experience > i {
-    color: var(--subtext);
+    color: var(--background);
     font-size: 1.3rem;
     margin-right: 0.6rem;
 }
 
 .popup-content-experience > p {
     font-style: italic;
-    color: var(--subtext);
+    color: var(--background);
     font-size: 0.9rem;
 }
 .popup-visible {

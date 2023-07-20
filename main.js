@@ -40,11 +40,12 @@ window.addEventListener("click", (e) => {
 });
 
 function assignButtonListeners() {
-    let buttons = document.querySelectorAll(".project-tile-wrapper");
+    let buttons = document.querySelectorAll(".project-tile");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", (e) => {
             let index = e.target.closest("li[data-index]").dataset.index;
-            popup(index);
+            console.log(index);
+            popup(buttons[i], index);
         });
     }
 }
@@ -54,25 +55,32 @@ window.addEventListener("DOMContentLoaded", () => {
     router();
 });
 
-function popup(i) {
+function popup(btn, i) {
     // populate the overlay, then show the overlay
-    let overlay = document.getElementById("popup");
-    let content = document.getElementById("popup-content");
+    // let overlay = document.getElementById("popup");
+    // let content = document.getElementById("popup-content");
 
-    document.getElementById("footer").classList.add("popup-invisible");
-    // populate
-    content.innerHTML = getProject(i);
-    document.getElementById("popup-close").addEventListener("click", () => {
-        popoff();
-    });
-    // show
-    overlay.style.display = "block";
-    // animation
-    overlay.style.transform = "translateY(90px) scale(0.98)";
-    overlay.style.opacity = "0";
-    overlay.offsetHeight;
-    overlay.style.transform = "translateY(0) scale(1)";
-    overlay.style.opacity = "1";
+    // document.getElementById("footer").classList.add("popup-invisible");
+    // // populate
+    // content.innerHTML = getProject(i);
+    // document.getElementById("popup-close").addEventListener("click", () => {
+    //     popoff();
+    // });
+    // // show
+    // overlay.style.display = "block";
+    // // animation
+    // overlay.style.transform = "translateY(90px) scale(0.98)";
+    // overlay.style.opacity = "0";
+    // overlay.offsetHeight;
+    // overlay.style.transform = "translateY(0) scale(1)";
+    // overlay.style.opacity = "1";
+    btn.parentElement.classList.toggle("project-tile-active");
+    let panel = btn.nextElementSibling;
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+    }
 }
 export function popoff() {
     const overlay = document.getElementById("popup");

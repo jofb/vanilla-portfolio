@@ -1,5 +1,5 @@
 import home from "./views/home.js";
-import projects, { getProject } from "./views/projects.js";
+import projects from "./views/projects.js";
 import project from "./views/project.js";
 import projectsList from "./assets/projects-list.json";
 
@@ -26,7 +26,6 @@ function router() {
         history.replaceState("", "", "/");
         router();
     }
-    popoff();
     assignButtonListeners();
 }
 
@@ -38,42 +37,18 @@ window.addEventListener("click", (e) => {
         router();
     }
 });
-
+// Assigns all listeners for project list
 function assignButtonListeners() {
     let buttons = document.querySelectorAll(".project-tile");
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener("click", (e) => {
             let index = e.target.closest("li[data-index]").dataset.index;
-            console.log(index);
-            popup(buttons[i], index);
+            openProject(buttons[i], index);
         });
     }
 }
-
-window.addEventListener("popstate", router);
-window.addEventListener("DOMContentLoaded", () => {
-    router();
-});
-
-function popup(btn, i) {
-    // populate the overlay, then show the overlay
-    // let overlay = document.getElementById("popup");
-    // let content = document.getElementById("popup-content");
-
-    // document.getElementById("footer").classList.add("popup-invisible");
-    // // populate
-    // content.innerHTML = getProject(i);
-    // document.getElementById("popup-close").addEventListener("click", () => {
-    //     popoff();
-    // });
-    // // show
-    // overlay.style.display = "block";
-    // // animation
-    // overlay.style.transform = "translateY(90px) scale(0.98)";
-    // overlay.style.opacity = "0";
-    // overlay.offsetHeight;
-    // overlay.style.transform = "translateY(0) scale(1)";
-    // overlay.style.opacity = "1";
+// Opens a project panel given an index and button
+function openProject(btn, i) {
     btn.parentElement.classList.toggle("project-tile-active");
     let panel = btn.nextElementSibling;
     if (panel.style.maxHeight) {
@@ -82,15 +57,7 @@ function popup(btn, i) {
         panel.style.maxHeight = panel.scrollHeight + "px";
     }
 }
-export function popoff() {
-    const overlay = document.getElementById("popup");
-    if (overlay.style.display == "none") return;
-    document.getElementById("footer").classList.add("popup-visible");
-    document.getElementById("footer").classList.remove("popup-invisible");
-    overlay.style.transform = "translateY(100px)";
-    //
-    overlay.style.opacity = "0";
-    window.setTimeout(() => {
-        overlay.style.display = "none";
-    }, 200);
-}
+window.addEventListener("popstate", router);
+window.addEventListener("DOMContentLoaded", () => {
+    router();
+});

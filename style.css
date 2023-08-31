@@ -4,8 +4,10 @@
     --text: #f2fdfd;
     --background: #0e1111;
     --primary: #1c70c4;
-    --secondary: rgb(231, 66, 99);
+    /* --secondary: rgb(231, 66, 99); */
+    --secondary: #f2fdfd;
     --accent: #2020df;
+    --ee: rgb(255, 196, 0);
 
     /* Misc */
     --big-text: 3.5rem;
@@ -35,7 +37,7 @@ body {
 }
 .navbar h1 {
     font-weight: 800;
-    color: var(--text);
+    color: var(--ee);
     font-size: 3rem;
     cursor: default;
     text-align: center;
@@ -54,10 +56,9 @@ body {
     padding: 0.5rem 1rem;
     border: none;
     background-color: var(--background);
-    border-radius: 0.75rem;
     font-size: 2rem;
     font-weight: 300;
-    color: var(--text);
+    color: var(--secondary);
     transition: ease-in-out 0.15s;
     -webkit-transition: ease-in-out 0.15s;
 }
@@ -162,7 +163,7 @@ body {
     -webkit-transition: ease-in 0.05s;
 }
 .project-tile > p {
-    color: var(--text);
+    color: var(--subtext);
 }
 .project-tile-wrapper:hover {
     /* transform: translateX(-5px); */
@@ -190,7 +191,7 @@ body {
 
 /* Full project panel (on click) */
 .project-tile-panel {
-    color: var(--subtext);
+    color: var(--text);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;

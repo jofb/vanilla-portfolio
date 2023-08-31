@@ -3,7 +3,8 @@ import data from "../assets/projects-list.json";
 
 const icons = {
     github: '<i class="icon fa-brands fa-github"></i>',
-    itch: '<i class="icon fa-brands fa-itch-io"></i>',
+    itchio: '<i class="icon fa-brands fa-itch-io"></i>',
+    website: '<i class="icon fa-solid fa-link"></i>',
 };
 
 let html = `<ul class="projects-list">`;
@@ -33,7 +34,9 @@ data.forEach((project, index) => {
         links.forEach((val) => {
             html += `<a class="footer-button" href="${
                 val.link
-            }" target="_blank">${icons[val.type]}</a>`;
+            }" target="_blank" title="${
+                val.type[0].toUpperCase() + val.type.substring(1)
+            } for ${project.title}"}>${icons[val.type]}</a>`;
         });
         html += `</div>`;
     }

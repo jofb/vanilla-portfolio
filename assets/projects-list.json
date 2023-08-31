@@ -9,7 +9,7 @@
                 "link": "https://github.com/jofb/vanilla-portfolio"
             }
         ],
-        "experience": ["HTML, CSS, Javascript, Node, Vite"]
+        "experience": ["HTML, CSS, Javascript, Node"]
     },
     {
         "title": "game dev",
@@ -17,7 +17,7 @@
         "full_text": "Throughout my studies and also through personal projects I have spent a bit of time doing game dev. Most of these are done using Unity, but I have also used other engines for other languages, such as Python and Lua. These are tons of fun to make, most can be found through my itch-io page below.",
         "links": [
             {
-                "type": "itch",
+                "type": "itchio",
                 "link": "https://jofbob.itch.io/"
             }
         ],
@@ -26,7 +26,7 @@
     {
         "title": "language identification",
         "short_text": "mobile spoken LID using machine learning",
-        "full_text": "As part of my final project of my undergrad I worked with a team of 6 to complete a project working with the State Emergency Service here in Tasmania. The aim of the project was to create a mobile application to identify spoken language using machine learning, to aid non English-speaking crash site victims. </br></br>This was implemented using Flutter, and Python for the ML using TensorFlow. I gained a lot of experience working with tensorflow, Flutter development, and working in a team on this project, it was a lot of fun!",
-        "experience": ["Flutter, Python, Tensorflow, Audio Classification"]
+        "full_text": "As part of my final project of my undergrad I am working with a team of 6 to complete a project with the State Emergency Service here in Tasmania. The aim of the project is to create a mobile application to identify spoken language using machine learning, to aid non English-speaking crash site victims. </br></br>This is implemented using Flutter, and Python for the ML using TensorFlow. I have already gained a ton of collaborative and development experience on this project, it is a lot of fun!",
+        "experience": ["Flutter, Python, Tensorflow"]
     }
 ]

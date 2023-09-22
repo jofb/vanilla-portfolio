@@ -27,6 +27,11 @@
         "title": "language identification",
         "short_text": "mobile spoken LID using machine learning",
         "full_text": "As part of my final project of my undergrad I am working with a team of 6 to complete a project with the State Emergency Service here in Tasmania. The aim of the project is to create a mobile application to identify spoken language using machine learning, to aid non English-speaking crash site victims. </br></br>This is implemented using Flutter, and Python for the ML using TensorFlow. I have already gained a ton of collaborative and development experience on this project, it is a lot of fun!",
-        "experience": ["Flutter, Python, Tensorflow"]
+        "experience": ["Flutter, Python, Tensorflow"],
+        "images": [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQq7RYnPS2ZSFg8KaqFtFEE4OF8WHM8J1qqi2lLcN8&s",
+            "https://img.freepik.com/premium-vector/bee-character-bumblebee-insect_532867-394.jpg",
+            "https://static.vecteezy.com/system/resources/thumbnails/022/667/113/small/honey-bee-icon-honey-bee-silhouette-vector.jpg"
+        ]
     }
 ]

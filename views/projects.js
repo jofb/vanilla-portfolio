@@ -1,6 +1,15 @@
 // load the json
 import data from "../assets/projects-list.json";
 
+function scrollImgGallery(images, index, scroll) {
+    let img = window.document.getElementById(`project-tile-img-${index}`);
+
+    index =
+        (((index + scroll) % images.length) + images.length) % images.length;
+    console.log(index);
+    img.src = images[index];
+}
+
 const icons = {
     github: '<i class="icon fa-brands fa-github"></i>',
     itchio: '<i class="icon fa-brands fa-itch-io"></i>',
@@ -18,8 +27,20 @@ data.forEach((project, index) => {
     // full project panel
     const exp = project.experience;
     const links = project.links;
+    const images = project.images;
 
-    html += `<div class='project-tile-panel'></br><p>${project.full_text}</p>`;
+    html += `<div class='project-tile-panel'></br>`;
+
+    if (images) {
+        html += `<div class='project-tile-img-gallery'><button>left</button>`;
+        html += `<img id='project-tile-img-${index}' class='project-tile-img' src='${images[0]}'>`;
+        // images.forEach((val) => {
+        //     html += `<img src='${val}'>`;
+        // });
+        html += `</div>`;
+    }
+
+    html += `<p>${project.full_text}</p>`;
 
     html += `<div class="panel-content-extra">`;
     if (exp) {

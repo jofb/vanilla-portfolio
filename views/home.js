@@ -3,5 +3,4 @@ let html = `
 	`;
 // display the home page content
 
-console.log(html);
 export default () => html;

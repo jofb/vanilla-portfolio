@@ -1,19 +1,11 @@
 import home from "./views/home.js";
-import projects from "./views/projects.js";
-import project from "./views/project.js";
-import projectsList from "./assets/projects-list.json";
+import projects, { projectImages } from "./views/projects.js";
 
 // Page routes
 let routes = {
     "/": { title: "Jordan Wylde-Browne", render: home },
     "/projects": { title: "Projects", render: projects },
 };
-
-projectsList.forEach((val, index) => {
-    // add as a route
-    let route = `/projects/project_${index}`;
-    routes[route] = { title: val.title, render: project };
-});
 
 // Page Router for single page application
 function router() {
@@ -45,8 +37,35 @@ function assignButtonListeners() {
             let index = e.target.closest("li[data-index]").dataset.index;
             openProject(buttons[i], index);
         });
+        let imgBtnLeft = document.getElementById(`project-img-btn-${i}-left`);
+        let imgBtnRight = document.getElementById(`project-img-btn-${i}-right`);
+        if (imgBtnLeft && imgBtnRight) {
+            imgBtnLeft.addEventListener("click", (e) => {
+                scrollImgGallery(projectImages[i], i, -1);
+            });
+            imgBtnRight.addEventListener("click", (e) => {
+                scrollImgGallery(projectImages[i], i, 1);
+            });
+        }
     }
 }
+
+function scrollImgGallery(images, projectIndex, scroll) {
+    let img = window.document.getElementById(
+        `project-tile-img-${projectIndex}`
+    );
+
+    // find the current index of the img (we arent keeping state here so this is lazy)
+    let currentIndex = images.indexOf(img.src);
+
+    // scroll it then set the image
+    currentIndex =
+        (((currentIndex + scroll) % images.length) + images.length) %
+        images.length;
+
+    img.src = images[currentIndex];
+}
+
 // Opens a project panel given an index and button
 function openProject(btn, i) {
     btn.parentElement.classList.toggle("project-tile-active");

@@ -10,6 +10,8 @@ function scrollImgGallery(images, index, scroll) {
     img.src = images[index];
 }
 
+let projectImages = [];
+
 const icons = {
     github: '<i class="icon fa-brands fa-github"></i>',
     itchio: '<i class="icon fa-brands fa-itch-io"></i>',
@@ -29,11 +31,21 @@ data.forEach((project, index) => {
     const links = project.links;
     const images = project.images;
 
+    projectImages[index] = images;
+
     html += `<div class='project-tile-panel'></br>`;
 
     if (images) {
-        html += `<div class='project-tile-img-gallery'><button>left</button>`;
-        html += `<img id='project-tile-img-${index}' class='project-tile-img' src='${images[0]}'>`;
+        // onclick = "scrollImgGallery(images.tostring, index, -1) "
+        html += `<div class='project-tile-img-gallery'>`;
+        html += `<button class="project-tile-img-btn" id="project-img-btn-${index}-left"><i class="fa-solid fa-chevron-left fa-3x"></i></button>`;
+        html += `<img id='project-tile-img-${index}' class='project-tile-img project-tile-img-switch' src='${images[0]}'>`;
+        html += `<button class="project-tile-img-btn" id="project-img-btn-${index}-right"><i class="fa-solid fa-chevron-right fa-3x"></i></button>`;
+
+        // plus all other images
+        for (let i = 0; i < images.length; i++) {
+            html += `<img id='project-tile-img-${index}-${i}' class='project-tile-img project-tile-img-wide' src='${images[i]}'>`;
+        }
         // images.forEach((val) => {
         //     html += `<img src='${val}'>`;
         // });
@@ -65,4 +77,8 @@ data.forEach((project, index) => {
 });
 html += "</ul>";
 
-export default () => html;
+// export default () => html;
+function fun() {
+    return html;
+}
+export { fun as default, projectImages };
